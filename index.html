@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EBooks - Your Intelligent Study Ecosystem</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        darkBg: '#050a15',
+                        darkCard: '#0f1629',
+                        darkBorder: '#1e293b',
+                        lightBg: '#f8fafc',
+                        lightCard: '#ffffff',
+                        lightBorder: '#e2e8f0',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Exact Background Grid from Video */
+        .bg-grid {
+            background-size: 60px 60px;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+        }
+        html:not(.dark) .bg-grid {
+            background-image: 
+                linear-gradient(to right, rgba(0, 0, 0, 0.06) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.06) 1px, transparent 1px);
+        }
+        
+        /* Smooth scrolling for anchor links */
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="bg-lightBg text-slate-900 dark:bg-darkBg dark:text-white font-sans transition-colors duration-300 relative min-h-screen">
+    
+    <div class="fixed inset-0 bg-grid pointer-events-none z-0"></div>
+
+    <div class="relative z-10 max-w-md mx-auto min-h-screen flex flex-col pb-16">
+        
+        <nav class="sticky top-0 z-50 flex justify-between items-center px-6 py-4 bg-lightBg/80 dark:bg-darkBg/80 backdrop-blur-xl border-b border-slate-200/50 dark:border-darkBorder/50 transition-colors duration-300">
+            <div class="flex items-center gap-3">
+                <div class="bg-blue-900/30 dark:bg-blue-500/20 w-10 h-10 rounded-lg flex items-center justify-center border border-blue-500/30 overflow-hidden">
+                    
+                    <img src="path/to/your/image.png" alt="Logo" class="w-7 h-7 object-contain">
+                    
+                    </div>
+                <span class="font-bold text-xl tracking-tight">EBooks</span>
+            </div>
+            <div class="flex items-center gap-6">
+                <button id="themeToggle" class="text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-white transition">
+                    <i class="fas fa-sun text-xl" id="themeIcon"></i>
+                </button>
+                <button class="text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-white transition">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+
+        <header class="flex flex-col items-center text-center px-6 pt-8 pb-10">
+            <div class="bg-blue-100 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-500/30 text-blue-600 dark:text-blue-400 text-[13px] font-medium px-4 py-1.5 rounded-full mb-8 flex items-center gap-2">
+                <div class="w-1.5 h-1.5 rounded-full bg-blue-500"></div>
+                Built for students, by students
+            </div>
+            
+            <h1 class="text-[2.75rem] font-extrabold leading-[1.1] mb-5 tracking-tight">
+                Your Intelligent<br>
+                <span class="bg-gradient-to-r from-blue-500 via-indigo-400 to-purple-400 bg-clip-text text-transparent">
+                    Study Ecosystem
+                </span>
+            </h1>
+            
+            <p class="text-slate-600 dark:text-slate-400 text-[15px] mb-8 px-2 leading-relaxed">
+                Curated materials for 10th–12th grade. Find what you need, download instantly, and get back to what matters.
+            </p>
+            
+            <a href="#classes" class="inline-flex bg-blue-600 hover:bg-blue-700 text-white font-medium py-3.5 px-6 rounded-full items-center justify-center gap-2 transition w-max mb-10 shadow-lg shadow-blue-500/20 active:scale-95">
+                Get Started <i class="fas fa-arrow-down text-sm animate-bounce"></i>
+            </a>
+
+            <div class="w-full relative">
+                <i class="fas fa-search absolute left-5 top-1/2 transform -translate-y-1/2 text-slate-400 text-sm"></i>
+                <input type="text" placeholder="Search all books across all classes..." 
+                    class="w-full bg-white dark:bg-darkCard border border-slate-200 dark:border-darkBorder rounded-full py-4 pl-12 pr-5 text-[15px] focus:outline-none focus:border-blue-500 dark:focus:border-blue-500 transition shadow-sm placeholder-slate-400 dark:placeholder-slate-500">
+            </div>
+        </header>
+
+        <section id="classes" class="px-6 py-6 mt-4 scroll-mt-24">
+            <div class="text-center mb-8">
+                <h3 class="text-blue-600 dark:text-blue-500 text-xs font-bold uppercase tracking-widest mb-3">CHOOSE YOUR CLASS</h3>
+                <h2 class="text-[28px] font-bold mb-3 tracking-tight">Start where you are</h2>
+                <p class="text-slate-600 dark:text-slate-400 text-[15px] leading-relaxed max-w-[280px] mx-auto">Select your grade to discover tailored study materials and resources.</p>
+            </div>
+
+            <div class="space-y-4">
+                <a href="#" class="block w-full">
+                    <div class="bg-white dark:bg-darkCard border border-slate-200 dark:border-darkBorder rounded-3xl p-6 shadow-sm hover:border-blue-500/50 active:bg-slate-50 dark:active:bg-[#151e32] transition cursor-pointer">
+                        <div class="flex items-start gap-4">
+                            <div class="bg-[#1DA1F2] w-12 h-12 rounded-2xl flex items-center justify-center shrink-0">
+                                <i class="fas fa-book-open text-white text-xl"></i>
+                            </div>
+                            <div class="pt-1">
+                                <h3 class="text-2xl font-bold mb-1.5 text-slate-900 dark:text-white">Class 10</h3>
+                                <p class="text-slate-500 dark:text-slate-400 text-sm leading-snug">Board Exam Prep — SQPs, Question Banks, Revision Packs & more</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <div class="bg-white dark:bg-darkCard border border-slate-200 dark:border-darkBorder rounded-3xl p-6 shadow-sm">
+                    <div class="flex items-center gap-4 mb-5">
+                        <div class="bg-[#9333EA] w-12 h-12 rounded-2xl flex items-center justify-center shrink-0">
+                            <i class="fas fa-graduation-cap text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-0.5">Class 11</h3>
+                            <p class="text-slate-500 dark:text-slate-400 text-sm">Stream Specialization</p>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-2.5">
+                        <a href="#" class="block w-full text-left">
+                            <div class="flex justify-between items-center p-3.5 rounded-2xl border border-transparent hover:border-slate-200 dark:hover:border-darkBorder hover:bg-slate-50 dark:hover:bg-[#151e32] active:bg-slate-100 dark:active:bg-[#1e293b] cursor-pointer transition group">
+                                <div class="flex items-center gap-4">
+                                    <i class="fas fa-flask text-blue-500 text-lg w-5 text-center"></i>
+                                    <div>
+                                        <div class="text-[15px] font-semibold text-slate-900 dark:text-white">Science</div>
+                                        <div class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">PCM / PCB — JEE & NEET</div>
+                                    </div>
+                                </div>
+                                <i class="fas fa-arrow-right text-slate-300 dark:text-slate-600 group-hover:text-slate-800 dark:group-hover:text-white transition"></i>
+                            </div>
+                        </a>
+                        
+                        <a href="#" class="block w-full text-left">
+                            <div class="flex justify-between items-center p-3.5 rounded-2xl border border-transparent hover:border-slate-200 dark:hover:border-darkBorder hover:bg-slate-50 dark:hover:bg-[#151e32] active:bg-slate-100 dark:active:bg-[#1e293b] cursor-pointer transition group">
+                                <div class="flex items-center gap-4">
+                                    <i class="fas fa-briefcase text-blue-500 text-lg w-5 text-center"></i>
+                                    <div>
+                                        <div class="text-[15px] font-semibold text-slate-900 dark:text-white">Commerce</div>
+                                        <div class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Accounts, Business Studies</div>
+                                    </div>
+                                </div>
+                                <i class="fas fa-arrow-right text-slate-300 dark:text-slate-600 group-hover:text-slate-800 dark:group-hover:text-white transition"></i>
+                            </div>
+                        </a>
+
+                        <a href="#" class="block w-full text-left">
+                            <div class="flex justify-between items-center p-3.5 rounded-2xl border border-transparent hover:border-slate-200 dark:hover:border-darkBorder hover:bg-slate-50 dark:hover:bg-[#151e32] active:bg-slate-100 dark:active:bg-[#1e293b] cursor-pointer transition group">
+                                <div class="flex items-center gap-4">
+                                    <i class="fas fa-globe-americas text-blue-500 text-lg w-5 text-center"></i>
+                                    <div>
+                                        <div class="text-[15px] font-semibold text-slate-900 dark:text-white">Arts / Humanities</div>
+                                        <div class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">History, Political Science</div>
+                                    </div>
+                                </div>
+                                <i class="fas fa-arrow-right text-slate-300 dark:text-slate-600 group-hover:text-slate-800 dark:group-hover:text-white transition"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-darkCard border border-slate-200 dark:border-darkBorder rounded-3xl p-6 shadow-sm">
+                    <div class="flex items-center gap-4 mb-5">
+                        <div class="bg-[#F97316] w-12 h-12 rounded-2xl flex items-center justify-center shrink-0">
+                            <i class="fas fa-chart-line text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-0.5">Class 12</h3>
+                            <p class="text-slate-500 dark:text-slate-400 text-sm">Board + Entrance Exams</p>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-2.5">
+                        <a href="#" class="block w-full text-left">
+                            <div class="flex justify-between items-center p-3.5 rounded-2xl border border-transparent hover:border-slate-200 dark:hover:border-darkBorder hover:bg-slate-50 dark:hover:bg-[#151e32] active:bg-slate-100 dark:active:bg-[#1e293b] cursor-pointer transition group">
+                                <div class="flex items-center gap-4">
+                                    <i class="fas fa-flask text-blue-500 text-lg w-5 text-center"></i>
+                                    <div>
+                                        <div class="text-[15px] font-semibold text-slate-900 dark:text-white">Science</div>
+                                        <div class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">PCM / PCB — JEE & NEET</div>
+                                    </div>
+                                </div>
+                                <i class="fas fa-arrow-right text-slate-300 dark:text-slate-600 group-hover:text-slate-800 dark:group-hover:text-white transition"></i>
+                            </div>
+                        </a>
+                        
+                        <a href="#" class="block w-full text-left">
+                            <div class="flex justify-between items-center p-3.5 rounded-2xl border border-transparent hover:border-slate-200 dark:hover:border-darkBorder hover:bg-slate-50 dark:hover:bg-[#151e32] active:bg-slate-100 dark:active:bg-[#1e293b] cursor-pointer transition group">
+                                <div class="flex items-center gap-4">
+                                    <i class="fas fa-briefcase text-blue-500 text-lg w-5 text-center"></i>
+                                    <div>
+                                        <div class="text-[15px] font-semibold text-slate-900 dark:text-white">Commerce</div>
+                                        <div class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Accounts, Business Studies</div>
+                                    </div>
+                                </div>
+                                <i class="fas fa-arrow-right text-slate-300 dark:text-slate-600 group-hover:text-slate-800 dark:group-hover:text-white transition"></i>
+                            </div>
+                        </a>
+
+                        <a href="#" class="block w-full text-left">
+                            <div class="flex justify-between items-center p-3.5 rounded-2xl border border-transparent hover:border-slate-200 dark:hover:border-darkBorder hover:bg-slate-50 dark:hover:bg-[#151e32] active:bg-slate-100 dark:active:bg-[#1e293b] cursor-pointer transition group">
+                                <div class="flex items-center gap-4">
+                                    <i class="fas fa-globe-americas text-blue-500 text-lg w-5 text-center"></i>
+                                    <div>
+                                        <div class="text-[15px] font-semibold text-slate-900 dark:text-white">Arts / Humanities</div>
+                                        <div class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">History, Political Science</div>
+                                    </div>
+                                </div>
+                                <i class="fas fa-arrow-right text-slate-300 dark:text-slate-600 group-hover:text-slate-800 dark:group-hover:text-white transition"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 py-8 mt-4">
+            <div class="mb-8">
+                <h3 class="text-blue-600 dark:text-blue-500 text-xs font-bold uppercase tracking-widest mb-3">STUDY TOOLS</h3>
+                <h2 class="text-[28px] font-bold mb-3 tracking-tight">Built to help you learn</h2>
+                <p class="text-slate-600 dark:text-slate-400 text-[15px] leading-relaxed">Handcrafted tools designed to complement your study workflow.</p>
+            </div>
+
+            <div class="space-y-4">
+                <div class="bg-white dark:bg-darkCard border border-slate-200 dark:border-darkBorder rounded-3xl p-6 shadow-sm hover:border-blue-500/50 transition">
+                    <div class="bg-[#EF4444] w-12 h-12 rounded-2xl flex items-center justify-center mb-5 shadow-sm shadow-red-500/20">
+                        <i class="fas fa-stopwatch text-white text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2">Pomotask</h3>
+                    <p class="text-slate-500 dark:text-slate-400 text-[15px] mb-5 leading-snug">Focus timer meets task manager — stay productive during study sessions.</p>
+                    <a href="#" class="text-blue-600 dark:text-blue-500 text-sm font-semibold flex items-center gap-2 hover:gap-3 transition-all">
+                        Open Tool <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <div class="bg-white dark:bg-darkCard border border-slate-200 dark:border-darkBorder rounded-3xl p-6 shadow-sm hover:border-blue-500/50 transition">
+                    <div class="bg-[#3B82F6] w-12 h-12 rounded-2xl flex items-center justify-center mb-5 shadow-sm shadow-blue-500/20">
+                        <i class="fas fa-atom text-white text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2">Periodic Table</h3>
+                    <p class="text-slate-500 dark:text-slate-400 text-[15px] mb-5 leading-snug">Interactive element explorer with detailed properties & electron config.</p>
+                    <a href="#" class="text-blue-600 dark:text-blue-500 text-sm font-semibold flex items-center gap-2 hover:gap-3 transition-all">
+                        Open Tool <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <div class="bg-white dark:bg-darkCard border border-slate-200 dark:border-darkBorder rounded-3xl p-6 shadow-sm hover:border-blue-500/50 transition">
+                    <div class="bg-[#A855F7] w-12 h-12 rounded-2xl flex items-center justify-center mb-5 shadow-sm shadow-purple-500/20">
+                        <i class="fas fa-book text-white text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2">Scholar Hub</h3>
+                    <p class="text-slate-500 dark:text-slate-400 text-[15px] mb-5 leading-snug">Curated academic resources & research papers in one unified platform.</p>
+                    <a href="#" class="text-blue-600 dark:text-blue-500 text-sm font-semibold flex items-center gap-2 hover:gap-3 transition-all">
+                        Open Tool <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 py-6 mt-4">
+            <div class="bg-white dark:bg-darkCard border border-slate-200 dark:border-darkBorder rounded-[2rem] p-8 text-center shadow-sm">
+                <h2 class="text-2xl font-bold mb-3 tracking-tight">Ready to start learning?</h2>
+                <p class="text-slate-600 dark:text-slate-400 text-[15px] mb-8 max-w-[250px] mx-auto leading-snug">Access hundreds of curated study materials — completely free.</p>
+                <a href="#classes" class="block bg-blue-600 hover:bg-blue-700 text-white font-medium py-3.5 px-6 rounded-full w-full flex items-center justify-center gap-2 transition shadow-lg shadow-blue-500/20 active:scale-95">
+                    Browse Materials <i class="fas fa-arrow-up text-sm"></i>
+                </a>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        const html = document.documentElement;
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+
+        if (html.classList.contains('dark')) {
+            themeIcon.classList.replace('fa-moon', 'fa-sun');
+        }
+
+     
